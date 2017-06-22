@@ -1,0 +1,12 @@
+form{
+    display: inline-block;
+    width: 58%;
+    border: 1px solid;
+    padding: 5%;
+    margin-left: 25%;
+    margin-top: 6%;
+    border-radius: 7%;
+}
+#address~input{
+    margin:2.5% 0%;
+}
