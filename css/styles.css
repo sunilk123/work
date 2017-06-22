@@ -4,9 +4,29 @@ form{
     border: 1px solid;
     padding: 5%;
     margin-left: 25%;
-    margin-top: 6%;
+    margin-top: 10%;
     border-radius: 7%;
 }
 #address~input{
     margin:2.5% 0%;
+}
+/*
+h3{
+    background-color: #98e3dc;
+    padding: 3% 38%;
+    position: fixed;
+    top: -3%;
+    display: inline-block;
+    width: 109%;
+}*/
+header{
+    background-color: #98e3dc;
+    padding: 2% 43%;
+    position: fixed;
+    top: -3%;
+    display: inline-block;
+    width: 109%;
+}
+#zip{
+    width: 25%;
 }
