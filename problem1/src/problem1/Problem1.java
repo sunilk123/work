@@ -5,6 +5,7 @@
  */
 package problem1;
 
+import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.Iterator;
 import java.util.Map;
@@ -18,7 +19,8 @@ import java.util.Set;
 public class Problem1 {
 
     static String sentence;
-    static String[] words;
+    static String[] result;
+    static ArrayList<String> words =new ArrayList<String>();
     static Scanner console = new Scanner(System.in);
     static Map<String,Integer> uniquewords=new HashMap<String,Integer>(); 
     public static void main(String[] args) {
@@ -29,20 +31,27 @@ public class Problem1 {
         
         //----split into words----
         
-        words=sentence.split("\\W");
-        System.out.println("Number of words in the string = "+words.length);
+        result=sentence.split("\\W");
+        for(int i=0;i<result.length;i++){
+            if(!result[i].equals("")){
+                words.add(result[i]);
+                
+            }
+            
+        }
+        System.out.println("Number of words in the string = "+words.size());
         System.out.println("the words are :");
-        for(int i=0;i<words.length;i++)
-            System.out.println(words[i]);
+        for(int i=0;i<words.size();i++)
+            System.out.println(words.get(i));
         
         //----copying the words into Map----
-        for(int i=0;i<words.length;i++){
+        for(int i=0;i<words.size();i++){
             int value = 1;
-            for(int j=i+1;j<words.length;j++){
-                if(words[i].equals(words[j]))
+            for(int j=i+1;j<words.size();j++){
+                if(words.get(i).equals(words.get(j)))
                     value+=1;
             }
-            uniquewords.putIfAbsent(words[i],value);
+            uniquewords.putIfAbsent(words.get(i),value);
         }
         
         //----displaying a map----
