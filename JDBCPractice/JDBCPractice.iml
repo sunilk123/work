@@ -7,5 +7,20 @@
     </content>
     <orderEntry type="inheritedJdk" />
     <orderEntry type="sourceFolder" forTests="false" />
+    <orderEntry type="module-library">
+      <library>
+        <CLASSES />
+        <JAVADOC />
+        <SOURCES>
+          <root url="file://F:/sqljdbc_6.0/enu/samples/adaptive" />
+          <root url="file://F:/sqljdbc_6.0/enu/samples/alwaysencrypted" />
+          <root url="file://F:/sqljdbc_6.0/enu/samples/connections" />
+          <root url="file://F:/sqljdbc_6.0/enu/samples/datatypes" />
+          <root url="file://F:/sqljdbc_6.0/enu/samples/resultsets" />
+          <root url="file://F:/sqljdbc_6.0/enu/samples/sparse" />
+        </SOURCES>
+      </library>
+    </orderEntry>
+    <orderEntry type="library" name="adaptive" level="project" />
   </component>
 </module>
