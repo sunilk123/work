@@ -22,27 +22,24 @@ public class App
     public static void main( String[] args ) throws Exception
     {
         System.out.println(org.hibernate.Version.getVersionString());
-        Student st=null;
+        AdminLoginEntity ae=new AdminLoginEntity();
         String hibernatePropsFilePath = "C:\\repo\\kalakand\\HibernatePractice\\src\\main\\hibernate.cfg.xml";
 
         File hibernatePropsFile = new File(hibernatePropsFilePath);
-//        Configuration cg =new Configuration().configure(hibernatePropsFile).addAnnotatedClass(Student.class);
-//        StandardServiceRegistryBuilder serviceRegistryBuilder = new StandardServiceRegistryBuilder().applySettings(cg.getProperties());
-//
-//        ServiceRegistry serviceRegistry = serviceRegistryBuilder.build();
-        Configuration cg= new Configuration();
-        cg=cg.configure(hibernatePropsFile);
-        SessionFactory sf= cg.buildSessionFactory();
+        Configuration cg =new Configuration().configure(hibernatePropsFile);
+        cg.addAnnotatedClass(AdminLoginEntity.class);
+        //cg.addAnnotatedClass(UserEntity.class);
+        StandardServiceRegistryBuilder serviceRegistryBuilder = new StandardServiceRegistryBuilder().applySettings(cg.getProperties());
+
+        ServiceRegistry serviceRegistry = serviceRegistryBuilder.build();
+        SessionFactory sf= cg.buildSessionFactory(serviceRegistry);
         Session ss = sf.openSession();
         Transaction tx= ss.beginTransaction();
-        st=(Student)ss.get(Student.class,1);
-        System.out.println(st);
-//        st=new Student();
-//        st.setSId(4);
-//        st.setSMarks(85);
-//        st.setSName("satish");
-//        ss.save(st);
+        //ss.save(ae);
+        ae=(AdminLoginEntity) ss.get(AdminLoginEntity.class,1);
+        System.out.println(ae);
+        ae.setPassword("admin");
         tx.commit();
-
+        ss.close();
     }
 }

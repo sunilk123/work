@@ -1,0 +1,21 @@
+<?xml version='1.0' encoding='utf-8'?>
+<!DOCTYPE hibernate-mapping PUBLIC
+    "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+    "http://www.hibernate.org/dtd/hibernate-mapping-3.0.dtd">
+<hibernate-mapping>
+
+    <class name="com.sunil.UserLoginEntity" table="User_Login" schema="dbo" catalog="ParkingService">
+        <id name="userid">
+            <column name="userid" sql-type="int"/>
+        </id>
+        <property name="username">
+            <column name="username" sql-type="nchar(30)" length="30"/>
+        </property>
+        <property name="passsword">
+            <column name="passsword" sql-type="nchar(30)" length="30"/>
+        </property>
+        <many-to-one name="adminLoginByAdminUserId" class="com.sunil.AdminLoginEntity">
+            <column name="admin_user_id"/>
+        </many-to-one>
+    </class>
+</hibernate-mapping>

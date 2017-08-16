@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>dropdown</title>
+</head>
+    <body>
+    <select class="form-control" id="options" onchange="display()">
+        <option value="">select option</option>
+        <option value="rohit">rohit</option>
+        <option value="sunil">sunil</option>
+        <option value="prabhu">prabhu</option>
+        <option value="akhil">akhil</option>
+    </select>
+    <label id="displaystring"></label>
+    <script>
+        function display(){
+            var options=document.getElementById("options");
+            var label=document.getElementById("displaystring");
+            var temp=label.textContent;
+            if(temp.indexOf(options.value)==-1)
+                label.textContent=temp+options.value+", ";
+
+
+        }
+    </script>
+    </body>
+</html>

@@ -1,0 +1,21 @@
+<?xml version='1.0' encoding='utf-8'?>
+<!DOCTYPE hibernate-configuration PUBLIC
+    "-//Hibernate/Hibernate Configuration DTD//EN"
+    "http://www.hibernate.org/dtd/hibernate-configuration-3.0.dtd">
+<hibernate-configuration>
+  <session-factory>
+    <property name="connection.url">jdbc:sqlserver://localhost:1433;databaseName=ParkingService;</property>
+    <property name="connection.driver_class">com.microsoft.sqlserver.jdbc.SQLServerDriver</property>
+      <mapping class="com.sunil.AdminLoginEntity"/>
+      <mapping resource="com/sunil/AdminLoginEntity.hbm.xml"/>
+      <mapping class="com.sunil.ParkingLotEntity"/>
+      <mapping resource="com/sunil/ParkingLotEntity.hbm.xml"/>
+      <mapping class="com.sunil.UserLoginEntity"/>
+      <mapping resource="com/sunil/UserLoginEntity.hbm.xml"/>
+      <!-- <property name="connection.username"/> -->
+    <!-- <property name="connection.password"/> -->
+
+    <!-- DB schema will be updated if needed -->
+    <!-- <property name="hbm2ddl.auto">update</property> -->
+  </session-factory>
+</hibernate-configuration>

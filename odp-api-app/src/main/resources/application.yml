@@ -1,0 +1,19 @@
+server:
+  port: 8019
+zuul:
+  routes:
+    resource:
+      path: /ui/**
+      url: http://localhost:8888
+activemq:
+  username: admin
+  password: password
+  location:
+    queue: http://mq.sidgs.net:8161/api/message?destination=queue://
+    topic: http://mq.sidgs.net:8161/api/message?destination=topic://
+  event:
+    queue:
+      user: user_event
+    topic:
+      notification: odp_notifications
+

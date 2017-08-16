@@ -1,39 +1,43 @@
-import java.util.ArrayList;
-import java.util.List;
-
 /**
- * Created by SUNIL PC on 15-07-2017.
+ * Created by SUNIL PC on 23-07-2017.
  */
 public class Resource {
 
-    private int slots =0;
-    private int limit=0;
+    private int slots;
+    private int limit;
 
-    public int getLots() {
+    public int getSlotsCount() {
         return slots;
     }
 
-    public void setLots(int slots) {
-        this.slots = slots;
-        limit=slots;
+    public void setSlotsCount(int slots) throws ResourceException {
+            if (slots < 0)
+                throw new ResourceException("can not be negative");
+            else {
+                this.slots = slots;
+                limit = slots;
+            }
     }
 
-    public boolean alotLot() {
+    public boolean alotLot(){
 
-        if (slots > 0) {
+        if(slots==0)
+            return false;
+        else {
+
             slots--;
             return true;
-        } else
-            return false;
+        }
     }
+    public boolean emptyLot(){
 
-    public boolean emptyLot() {
-
-        if(slots==limit)
+        if(slots==limit){
             return false;
+        }
         else{
             slots++;
             return true;
+
         }
     }
 }

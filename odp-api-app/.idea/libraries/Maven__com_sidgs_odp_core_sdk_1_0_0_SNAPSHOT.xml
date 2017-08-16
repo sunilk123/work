@@ -1,0 +1,13 @@
+<component name="libraryTable">
+  <library name="Maven: com.sidgs:odp-core-sdk:1.0.0-SNAPSHOT">
+    <CLASSES>
+      <root url="jar://$MAVEN_REPOSITORY$/com/sidgs/odp-core-sdk/1.0.0-SNAPSHOT/odp-core-sdk-1.0.0-20170813.175642-6.jar!/" />
+    </CLASSES>
+    <JAVADOC>
+      <root url="jar://$MAVEN_REPOSITORY$/com/sidgs/odp-core-sdk/1.0.0-SNAPSHOT/odp-core-sdk-1.0.0-20170813.175642-6-javadoc.jar!/" />
+    </JAVADOC>
+    <SOURCES>
+      <root url="jar://$MAVEN_REPOSITORY$/com/sidgs/odp-core-sdk/1.0.0-SNAPSHOT/odp-core-sdk-1.0.0-20170813.175642-6-sources.jar!/" />
+    </SOURCES>
+  </library>
+</component>

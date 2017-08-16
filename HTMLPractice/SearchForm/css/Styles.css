@@ -1,0 +1,12 @@
+section{
+    transform: translate(0%,150%);
+}
+h1{
+    text-align: center;
+}
+.head{
+    display: inline-block;
+    position: fixed;
+    width: 100%;
+    background-color: #74e4ff;
+}

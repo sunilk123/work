@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <title>Full Name</title>
+        <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
+    </head>
+    <body>
+        <article>
+            <head>
+                <h2 style="text-align: center">Enter your Name</h2>
+            </head>
+            <section>
+                <div class="container-fluid" >
+                    <div class="row align-items-center">
+                        <div class="col-md-4"></div>
+                        <div class="col-md-4">
+
+                            <form >
+                                <div class="form-group">
+                                    <label for="firstname">Fisrt Name</label>
+                                    <input type="text" name="firstname" id="firstname" class="form-control"/>
+                                </div>
+                                <div class="form-group">
+                                    <label for="lastname">Last Name</label>
+                                    <input type="text" name="lastname" id="lastname" class="form-control"/>
+                                </div>
+                                <div class="form-group" id="error">
+                                    <label for="fullname">Full Name</label>
+                                    <input type="text" name="fullname" id="fullname" class="form-control" />
+                                </div>
+                            </form>
+                        </div>
+                    </div>
+                </div>
+            </section>
+            <footer></footer>
+        </article>
+        <script>
+            var firstname=document.getElementById("firstname");
+            var lastname=document.getElementById("lastname");
+            var fullname=document.getElementById("fullname");
+            function generateFullName(){
+                var temp=firstname.value+" "+lastname.value;
+                if(temp.length<=20){
+                    fullname.value=firstname.value+" "+lastname.value;
+                    eraseError();
+                }
+                else{
+                    printError();
+                }
+
+
+
+            }
+            function printError(){
+                if(document.getElementById("errorLabel")==null){
+                    var label=document.createElement("label");
+                    label.textContent="Full Name can not be exceed 20 characters";
+                    label.style.color="red";
+                    label.id="errorLabel";
+                    var error=document.getElementById("error");
+                    error.appendChild(label);
+                }
+
+
+            }
+            function eraseError(){
+                var label=document.getElementById("errorLabel");
+                if(label!=null){
+                    var error=label.parentNode;
+                    error.removeChild(label);
+                }
+            }
+                firstname.onkeyup=generateFullName;
+                lastname.onkeyup = generateFullName;
+
+
+        </script>
+
+    </body>
+</html>
