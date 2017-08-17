@@ -1,6 +1,8 @@
 package com.sidgs.odp.api.controllers;
 
-import com.sidgs.odp.model.Org;
+//import com.sidgs.odp.model.Org;
+import com.sidgs.odp.api.service.OrgService;
+import com.sidgs.odp.model.Organization;
 import com.sidgs.odp.repository.OrgRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
@@ -16,24 +18,23 @@ import java.util.List;
 @RestController
 @RequestMapping("org")
 public class OrgController {
-
     @Autowired
-    OrgRepository orgRepository ;
+    private OrgService orgService;
 
     @RequestMapping (method = RequestMethod.GET, produces = MediaType.APPLICATION_JSON_VALUE)
-    public @ResponseBody List<Org> getOrgs(){
-        return (List<Org>) orgRepository.findAll();
+    public @ResponseBody List<Organization> getOrgs(){
+        return orgService.getAll();
     }
-
-
-
-
-
+    
     @RequestMapping (method = RequestMethod.POST, produces = MediaType.APPLICATION_JSON_VALUE,
             consumes = MediaType.APPLICATION_JSON_VALUE)
     @ResponseStatus(HttpStatus.OK)
-    public void add(Org org) {
-        orgRepository.save(org);
+    public void add(Organization org)  {
+        try {
+            orgService.saveOrganizaion(org);
+        } catch (Exception e) {
+            e.printStackTrace();
+        }
     }
 
 }

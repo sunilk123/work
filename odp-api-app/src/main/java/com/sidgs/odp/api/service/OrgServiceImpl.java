@@ -1,21 +1,26 @@
 package com.sidgs.odp.api.service;
 
 import com.sidgs.odp.api.error.OrgException;
-import com.sidgs.odp.model.Org;
-import com.sidgs.odp.repository.OrgRepository;
+//import com.sidgs.odp.model.Org;
+import com.sidgs.odp.model.Organization;
+import com.sidgs.odp.repository.OrganizationRepository;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Service;
+
+import java.util.List;
 
 /**
  * Created by kalya on 6/26/2017.
  */
+@Service
 public class OrgServiceImpl implements OrgService {
 
     private static final org.slf4j.Logger log = org.slf4j.LoggerFactory.getLogger(OrgServiceImpl.class);
     @Autowired
-    OrgRepository orgRepository;
+    OrganizationRepository orgRepository;
 
     @Override
-    public void saveOrganizaion(Org org) throws OrgException {
+    public void saveOrganizaion(Organization org) throws OrgException {
 
         log.info("trying to save the new Organization name");
         if(orgRepository.findOne(org.getNameOfOrg())==null){
@@ -34,7 +39,7 @@ public class OrgServiceImpl implements OrgService {
         log.info("trying to enable Org");
         if(orgRepository.findOne(orgName)!=null){
             try{
-                Org org = orgRepository.findOne(orgName);
+                Organization org = orgRepository.findOne(orgName);
 
 
 
@@ -50,7 +55,12 @@ public class OrgServiceImpl implements OrgService {
     }
 
     @Override
-    public void disableOrg(Org org) {
+    public void disableOrg(Organization org) {
 
+    }
+
+    @Override
+    public List<Organization> getAll(){
+        return orgRepository.findAll();
     }
 }
