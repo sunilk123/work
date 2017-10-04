@@ -23,5 +23,15 @@
       </library>
     </orderEntry>
     <orderEntry type="library" name="adaptive" level="project" />
+    <orderEntry type="module-library">
+      <library>
+        <CLASSES>
+          <root url="file://F:/sqljdbc_6.0/enu/jre8" />
+        </CLASSES>
+        <JAVADOC />
+        <SOURCES />
+        <jarDirectory url="file://F:/sqljdbc_6.0/enu/jre8" recursive="false" />
+      </library>
+    </orderEntry>
   </component>
 </module>

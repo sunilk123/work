@@ -32,7 +32,7 @@ public class App
         StandardServiceRegistryBuilder serviceRegistryBuilder = new StandardServiceRegistryBuilder().applySettings(cg.getProperties());
 
         ServiceRegistry serviceRegistry = serviceRegistryBuilder.build();
-        SessionFactory sf= cg.buildSessionFactory(serviceRegistry);
+        SessionFactory sf= cg.buildSessionFactory();
         Session ss = sf.openSession();
         Transaction tx= ss.beginTransaction();
         //ss.save(ae);

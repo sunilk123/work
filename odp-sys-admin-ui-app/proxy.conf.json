@@ -1,0 +1,7 @@
+{
+    "/api/*": {
+        "target" : "http://odp.sidgs.net:8019",
+	"secure" : false, 	
+        "pathRewrite" : {"^/api" : ""}
+    }
+}
